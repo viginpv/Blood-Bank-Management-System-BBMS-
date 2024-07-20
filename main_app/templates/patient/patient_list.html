@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient List</title>
+</head>
+<body>
+    <h1>Patient List</h1>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Age</th>
+                <th>Contact</th>
+                <th>Blood Group</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for patient in patients %}
+            <tr id="patient-{{ patient.id }}">
+                <td>{{ patient.user.username }}</td>
+                <td>{{ patient.address }}</td>
+                <td>{{ patient.age }}</td>
+                <td>{{ patient.contact }}</td>
+                <td>{{ patient.blood_group }}</td>
+                <td>
+                    <a href="{% url 'edit_patient' patient.id %}">Edit</a>
+                    <form action="{% url 'delete_patient' patient.id %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

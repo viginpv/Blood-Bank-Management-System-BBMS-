@@ -1,0 +1,32 @@
+<!-- hospital_dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Hospital Dashboard, {{ request.user.username }}</h1>
+    <p>This is the dashboard for hospital.</p>
+    <h1>Hospital Dashboard</h1>
+    <ul>
+        <!-- Other dashboard links... -->
+        <li><a href="{% url 'hospital_blood_requests' %}">View Blood Requests</a></li>
+        <a href="{% url 'add_patient' %}">add patient</a><br>
+        <a href="{%  url 'list_patients' %}">view patients</a><br>
+
+        
+        <a href="{% url 'certificate' %}">certificate for donor</a><br>
+        <a href="{% url 'hospital_profile' %}">Hospital_profile</a><br>
+        <a href="{% url 'edit_hospital_profile' %}">Edit_Hospital_profile</a><br>
+        <a href="{% url 'submit_hospital_blood_request' %}">Request for blood</a><br>
+        <a href="{% url 'donor_list' %}"> list of donors</a><br>
+        <a href="{% url 'add_donor_by_main' %}">Add New Donor</a><br>
+        
+
+        
+    </ul>
+</body>
+</html>

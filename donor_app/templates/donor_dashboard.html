@@ -1,0 +1,23 @@
+<!-- donor_dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Dashboard</title>
+</head>
+<body>
+    <h1>Donor Dashboard</h1>
+    <h1>Welcome to the donor Dashboard, {{ request.user.username }}</h1>
+    <p>This is the dashboard for donor.</p>
+    <ul>
+        <!-- Other dashboard links... -->
+        <a href="{% url 'donor_blood_requests' %}">view blood request</a>
+        <p><a href="{% url 'donor_profile' %}">View Profile</a></p>
+        <p><a href="{% url 'certificate' %}">Download certificate</a></p>
+
+        
+    </ul>
+</body>
+</html>

@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Requests</title>
+</head>
+<body>
+    <h1>Blood Requests</h1>
+    <ul>
+        {% for blood_request in blood_requests %}
+        <p>{{ blood_request }}</p>
+        <a href="{% url 'fulfill_request' request_id=blood_request.id %}">Fulfill Request</a>
+    {% endfor %}
+    
+    </ul>
+    <a href="{% url 'hospital_dashboard' %}">Back to Dashboard</a>
+</body>
+</html>

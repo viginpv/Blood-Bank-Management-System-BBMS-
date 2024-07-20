@@ -1,0 +1,18 @@
+<!-- patient_dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Patient Dashboard, {{ request.user.username }}</h1>
+    <p>This is the dashboard for patients.</p>
+    <!-- Link to go to the patient profile page -->
+    <a href="{% url 'patient_profile' %}">View Profile</a>
+    
+<a href="{% url 'submit_blood_request' %}">Submit Blood Request</a>
+</body>
+</html>

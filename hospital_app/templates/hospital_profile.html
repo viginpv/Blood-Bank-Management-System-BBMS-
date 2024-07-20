@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Profile</title>
+</head>
+<body>
+    <h1>Hospital Profile</h1>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <p>Name: {{ hospital.user.username }}</p>
+    <p>Address: {{ hospital.address }}</p>
+    <p>Contact: {{ hospital.contact }}</p>
+    <a href="{% url 'edit_hospital_profile' %}">Edit Profile</a>
+    <a href="{% url 'hospital_dashboard' %}">Back to Dashboard</a>
+</body>
+</html>

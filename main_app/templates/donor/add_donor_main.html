@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Add Donor</h2>
+    <form method="post">
+      {% csrf_token %}
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username"><br>
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password"><br>
+      <label for="address">Address:</label>
+      <textarea name="address" id="address"></textarea><br>
+      <label for="age">Age:</label>
+      <input type="number" name="age" id="age"><br>
+      <label for="contact">Contact:</label>
+      <input type="text" name="contact" id="contact"><br>
+      <label for="blood_group">Blood Group:</label><br>
+      <select id="blood_group" name="blood_group" required>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+      </select><br>
+      <button type="submit">Add Donor</button>
+    </form>
+</body>
+</html>

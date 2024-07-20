@@ -1,0 +1,33 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br>
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address"><br>
+    <label for="age">Age:</label>
+    <input type="text" id="age" name="age"><br>
+    <label for="contact">Contact:</label>
+    <input type="text" id="contact" name="contact"><br>
+    <label for="blood_group">Blood Group:</label>
+    <select id="blood_group" name="blood_group">
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="A-">B-</option>
+        <option value="A-">B+</option>
+        <option value="A-">AB-</option>
+        <option value="A-">AB+</option>
+        <option value="A-">O-</option>
+        <option value="A-">O+</option>
+        <!-- Add other blood groups -->
+    </select><br>
+    <label for="user_type">User Type:</label>
+    <select id="user_type" name="user_type">
+        <option value="patient">Patient</option>
+        <option value="donor">Donor</option>
+        <option value="hospital">Hospital</option>
+        <option value="main">Admin</option>
+    </select><br>
+    <button type="submit">Sign Up</button>
+</form>

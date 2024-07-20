@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Dashboard</title>
+    {% load static %}
+</head>
+<body>
+    <div>
+        <h1>Main Dashboard</h1>
+        <p>Welcome, {{ username }}!</p>
+    </div>
+
+    <div>
+        <div>
+            <ul>
+                <li><a href="{% url 'patient_list' %}">Patient List</a></li>
+                <li><a href="{% url 'add_patient_by_main' %}">Add Patient</a></li>
+                <li><a href="{% url 'hospital_list' %}">view Hospital</a></li>
+                <li><a href="{% url 'add_hospital_by_main' %}">add Hospital</a></li>
+                <li><a href="{% url 'donor_list' %}">view donors</a></li>
+                <li><a href="{% url 'add_donor_by_main' %}">Add New Donor</a></li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        <p>&copy; 2024 Blood Bank Management System</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h2>Donors</h2>
+    <a href="{% url 'add_donor_by_main' %}">Add New Donor</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Address</th>
+                <th>Age</th>
+                <th>Contact</th>
+                <th>Blood Group</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for donor in donors %}
+            <tr>
+              <td>{{ donor.user.username }}</td>
+              <td>{{ donor.address }}</td>
+              <td>{{ donor.age }}</td>
+              <td>{{ donor.contact }}</td>
+              <td>{{ donor.blood_group }}</td>
+              <td>
+                <a href="{% url 'edit_donor_by_main' donor.id %}">Edit</a>
+                <a href="{% url 'delete_donor_by_main' donor.id %}">Delete</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
