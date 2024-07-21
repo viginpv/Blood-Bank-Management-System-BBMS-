@@ -33,7 +33,7 @@ def signup_view(request):
 
         return redirect('login_view')  
 
-    return render(request, 'signup.html')
+    return render(request, 'login.html')
 
 def login_view(request):
     if request.method == 'POST':
