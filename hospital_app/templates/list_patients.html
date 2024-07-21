@@ -32,6 +32,7 @@
                 <td>{{ patient.contact }}</td>
                 <td>{{ patient.blood_group }}</td>
                 <td>
+                    <a href="{% url 'add_patient' %}">add patient</a><br>
                     <a href="{% url 'edit_patient' patient.id %}">Edit</a>
                     <form action="{% url 'delete_patient' patient.id %}" method="post" style="display:inline;">
                         {% csrf_token %}
