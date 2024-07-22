@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Hospital Profile</title>
@@ -22,4 +22,120 @@
     <a href="{% url 'add_donor_by_main' %}">Add New Donor</a><br>
     <a href="{% url 'add_patient' %}">add patient</a><br>
 </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVE2yEvj-q_hQ55u8Oe9b1Z3lfoIdINYG_iA&s"
+            class="card-img-top" alt="Hospital Image">
+        <div class="card-body">
+            <h5 class="card-title">{{ hospital.user.username }}</h5>
+            <p class="card-text">Hospital specialized in blood donation and transfusion services.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Address: {{ hospital.address }}</li>
+            <li class="list-group-item">Contact: {{ hospital.contact }}</li>
+            <li class="list-group-item">Blood Groups Available: </li>
+        </ul>
+        <div class="card-body">
+            <a href="{% url 'add_patient' %}" class="card-link">Add Patient</a>
+            <a href="{% url 'add_donor_by_main' %}" class="card-link">Add Donor</a>
+            <a href="{% url 'edit_hospital_profile' %}" class="card-link">Edit</a>
+        </div>
+        <div class="card-body">
+            <a class="card-link" href="{% url 'hospital_dashboard' %}">Back</a>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-color: #8EC5FC;
+            background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            width: 20rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 10px;
+            background-color: #8BC6EC;
+            background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-img-top {
+            border-radius: 10px 10px 0 0;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            text-align: center;
+            background-color: #8EC5FC;
+            background-image: linear-gradient(62deg, #8EC5FC 0%, #ffffff 98%, #E0C3FC 99%, #ffffff 100%);
+
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #e2137b;
+            /* Dark pink */
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #486075;
+        }
+
+        .list-group-item {
+            border: none;
+            padding: 0.75rem 1.25rem;
+            background-color: #8EC5FC;
+            background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
+            color: #000000;
+            font-size: 0.9rem;
+        }
+
+        .card-link {
+            color: #d63384;
+            /* Dark pink */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .card-link:hover {
+            text-decoration: double;
+        }
+    </style>
+</body>
+
 </html>
